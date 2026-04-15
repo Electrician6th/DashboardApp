@@ -24,12 +24,13 @@ namespace DashboardApp.View.Pages
         {
             InitializeComponent();
             LoadData(); 
+
         }
 
         private void LoadData()
-        { 
-            WarehousesCountTbl.Text = App.context.Warehouses.Count().ToString();
-            WarehousesCountTbl1.Text = App.context.Products.Count().ToString();
+        {
+            FridgeCountTbl.Text = App.context.Warehouses.Count().ToString();
+            FridgeCountTbl.Text = App.context.Products.Count().ToString();
             WarehousesCountTbl2.Text = App.context.Suppliers.Count().ToString();
         }
     }

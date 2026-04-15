@@ -24,40 +24,11 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="15">
-            <Grid VerticalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Name="WarehousesCountTbl"  Text="16" FontSize="60" FontWeight="SemiBold"
-                           HorizontalAlignment="Center"/>
-
-                <TextBlock Grid.Row="2"  Text="складов" FontSize="25"
-                           FontWeight="SemiBold"
-                           HorizontalAlignment="Center"/>
-                <Border BorderThickness="2" BorderBrush="Black" CornerRadius="15" Margin="420,-32,-424,-33" Grid.RowSpan="3">
-                    <Grid VerticalAlignment="Center">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="5"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock x:Name="WarehousesCountTbl1" FontSize="60" FontWeight="SemiBold"
-                            HorizontalAlignment="Center"><Run Language="ru-ru" Text="50"/></TextBlock>
-
-                        <TextBlock Grid.Row="2" FontSize="25"
-                            FontWeight="SemiBold"
-                            HorizontalAlignment="Center"><Run Language="ru-ru" Text="продуктов"/></TextBlock>
-                    </Grid>
-                </Border>
-
-
-
-            </Grid>
+        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="15">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Name="FridgeCountTbl" Text=" 10" FontSize="80" FontWeight="SemiBold" TextAlignment="Center"/>
+                <TextBlock Text="Морозильных аппаратов"  FontSize="20"/>
+            </StackPanel>
         </Border>
         <Border BorderThickness="2" BorderBrush="Black" CornerRadius="15" Grid.Column="4" Margin="0,0,0,20" Grid.RowSpan="2">
             <Grid VerticalAlignment="Top" Margin="-8,32,8,0">
