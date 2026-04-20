@@ -29,9 +29,10 @@ namespace DashboardApp.View.Pages
 
         private void LoadData()
         {
-            FridgeCountTbl.Text = App.context.Warehouses.Count().ToString();
-            FridgeCountTbl.Text = App.context.Products.Count().ToString();
-            WarehousesCountTbl2.Text = App.context.Suppliers.Count().ToString();
+            FridgeCountTbl.Text = App.context.Fridges.Count().ToString();
+            SupplierCountTbl.Text=App.context.Suppliers.Count().ToString();
+            ProductCountTbl.Text=App.context.Products.Count().ToString();
+            
         }
     }
 }

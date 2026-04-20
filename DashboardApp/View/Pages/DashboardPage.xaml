@@ -23,30 +23,26 @@
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-
-        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="15">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Name="FridgeCountTbl" Text=" 10" FontSize="80" FontWeight="SemiBold" TextAlignment="Center"/>
+            <!--Количество морозильных камер-->
+        <Border BorderThickness="1" Padding="20" Background="LightSkyBlue" CornerRadius="15">
+            <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Center">
+                <TextBlock Name="FridgeCountTbl" Text="5" FontSize="50" FontWeight="SemiBold" TextAlignment="Center"/>
                 <TextBlock Text="Морозильных аппаратов"  FontSize="20"/>
             </StackPanel>
         </Border>
-        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="15" Grid.Column="4" Margin="0,0,0,20" Grid.RowSpan="2">
-            <Grid VerticalAlignment="Top" Margin="-8,32,8,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock x:Name="WarehousesCountTbl2" FontSize="60" FontWeight="SemiBold"
-                    HorizontalAlignment="Center"><Run Language="ru-ru" Text="25"/></TextBlock>
-                <TextBlock
-            Grid.Row="2" HorizontalAlignment="Center" FontSize="25" FontWeight="SemiBold"><Run Language="ru-ru" Text="поставщиков"/></TextBlock>
-
-                <TextBlock Grid.Row="2"  Text="складов" FontSize="25"
-                    FontWeight="SemiBold"
-                    HorizontalAlignment="Center"/>
-            </Grid>
+        <!--Количество поставщиков-->
+        <Border BorderThickness="2" Padding="20" Background="LightGreen" CornerRadius="15" Grid.Column="2">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Name="SupplierCountTbl" Text="5" FontSize="50" FontWeight="SemiBold" TextAlignment="Center"/>
+                <TextBlock Text="Поставщиков" FontSize="20"/>
+            </StackPanel>
+        </Border>
+        <!--Количество товаров-->
+        <Border BorderThickness="2" Padding="20" Background="LightCyan" CornerRadius="15" Grid.Column="4">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Name="ProductCountTbl" Text="10" FontSize="50" FontWeight="SemiBold" TextAlignment="Center"/>
+                <TextBlock Text="Товаров" FontSize="20"/>
+            </StackPanel>
         </Border>
     </Grid>
 </Page>
