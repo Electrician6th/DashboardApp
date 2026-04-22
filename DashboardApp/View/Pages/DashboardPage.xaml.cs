@@ -32,7 +32,13 @@ namespace DashboardApp.View.Pages
             FridgeCountTbl.Text = App.context.Fridges.Count().ToString();
             SupplierCountTbl.Text=App.context.Suppliers.Count().ToString();
             ProductCountTbl.Text=App.context.Products.Count().ToString();
-            
+
+            //Весь доступный обьем
+            GeneralCountTbl.Text = App.context.Fridges.Sum(fridge => fridge.TotalVolume).ToString("F0") + " л";
+            //Занято
+            FreeCountTbl.Text = App.context.Fridges.Sum(fridge => fridge.UsedVolume).ToString("F0") + " л";
+            //Свободно
+            BusyCountTbl.Text = App.context.Fridges.Sum(fridge => fridge.TotalVolume - fridge.UsedVolume).ToString("F0") + " л";
         }
     }
 }
