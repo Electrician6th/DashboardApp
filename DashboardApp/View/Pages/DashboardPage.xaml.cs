@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DashboardApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,11 @@ namespace DashboardApp.View.Pages
             FreeCountTbl.Text = App.context.Fridges.Sum(fridge => fridge.UsedVolume).ToString("F0") + " л";
             //Свободно
             BusyCountTbl.Text = App.context.Fridges.Sum(fridge => fridge.TotalVolume - fridge.UsedVolume).ToString("F0") + " л";
+
+            //Накладные
+            CurrentYearReceioTbl.Text = App.context.Receipts.Count(receipt => receipt.Date.Year == DateTime.Now.Year).ToString();
+            AverageProductInReceiptTBl.Text = App.context.Receipts.Average(receipt => (double) receipt.ProductReceipts.Count()).ToString("F0");
+            ProductInReceiptTBl.Text= App.context.ProductReceipts.Count().ToString();
         }
     }
 }
