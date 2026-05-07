@@ -4,12 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DashboardApp.View.Pages"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       mc:Ignorable="d" 
       d:DesignHeight="614" d:DesignWidth="1280"
       Title="Дашборд">
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
@@ -114,6 +117,7 @@
                         <TextBlock Text="товаров в накладной (среднее)" TextWrapping="Wrap" TextAlignment="Center" FontSize="20"/>
                     </StackPanel>
                 </Border>
+                
                 <!--Общее кол-во товаров в накладной-->
                 <Border BorderThickness="1" CornerRadius="15" Grid.Column="4" Background="LightCyan" Padding="20">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -121,10 +125,14 @@
                         <TextBlock Text="товаров в накладной" TextWrapping="Wrap" TextAlignment="Center" FontSize="20"/>
                     </StackPanel>
                 </Border>
+            </Grid>
+        </Expander>
 
-
-
-
+        <Expander Grid.Row="6" Header="Затраты по поставщикам">
+            <Grid>
+                <lvc:CartesianChart Name="Chart" ZoomMode="None">
+                    
+                </lvc:CartesianChart>
             </Grid>
         </Expander>
 

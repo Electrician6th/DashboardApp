@@ -1,4 +1,6 @@
 ﻿using DashboardApp.Models;
+using LiveChartsCore.Measure;
+using LiveChartsCore.SkiaSharpView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +47,37 @@ namespace DashboardApp.View.Pages
             CurrentYearReceioTbl.Text = App.context.Receipts.Count(receipt => receipt.Date.Year == DateTime.Now.Year).ToString();
             AverageProductInReceiptTBl.Text = App.context.Receipts.Average(receipt => (double) receipt.ProductReceipts.Count()).ToString("F0");
             ProductInReceiptTBl.Text= App.context.ProductReceipts.Count().ToString();
+        }
+
+        private void LoadChart()
+        {
+            //Получаем коллекцию записей
+            List <ProductReceipt> productReceipts = App.context.ProductReceipts.ToList();
+
+            //Настройка графика (столбцов)
+            ColumnSeries<decimal> series = new ColumnSeries<decimal>()
+            {
+                Name = "Затраты",
+                Values = productReceipts.Select(pr => pr.TotalPrice).ToArray(),
+            };
+
+            //Настройка оси X
+            Axis xAxis = new Axis
+            {
+                Labels = productReceipts.Select(pr=>pr.Receipt.Date.ToString()).ToArray(),
+            };
+
+            //Настройка оси Y
+            Axis yAxis = new Axis
+            {
+                Labeler = value=>value.ToString()
+            };
+
+            Chart.Series = [series]; //если у коллекции поставить квадратные скобки,то произойдет быстрое создание массива
+            Chart.XAxes = [xAxis];
+            Chart.XAxes = [yAxis];
+
+
         }
     }
 }
