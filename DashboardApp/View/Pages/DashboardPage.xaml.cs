@@ -1,6 +1,8 @@
 ﻿using DashboardApp.Models;
 using LiveChartsCore.Measure;
 using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +28,8 @@ namespace DashboardApp.View.Pages
         public DashboardPage()
         {
             InitializeComponent();
-            LoadData(); 
-
+            LoadData();
+            LoadChart();
         }
 
         private void LoadData()
@@ -59,12 +61,14 @@ namespace DashboardApp.View.Pages
             {
                 Name = "Затраты",
                 Values = productReceipts.Select(pr => pr.TotalPrice).ToArray(),
+                Fill = new SolidColorPaint(new SKColor(49,42,64))
             };
 
             //Настройка оси X
             Axis xAxis = new Axis
             {
                 Labels = productReceipts.Select(pr=>pr.Receipt.Date.ToString()).ToArray(),
+
             };
 
             //Настройка оси Y
@@ -75,9 +79,9 @@ namespace DashboardApp.View.Pages
 
             Chart.Series = [series]; //если у коллекции поставить квадратные скобки,то произойдет быстрое создание массива
             Chart.XAxes = [xAxis];
-            Chart.XAxes = [yAxis];
+            Chart.YAxes = [yAxis];
 
-
+           
         }
     }
 }

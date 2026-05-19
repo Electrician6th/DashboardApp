@@ -130,7 +130,10 @@
 
         <Expander Grid.Row="6" Header="Затраты по поставщикам">
             <Grid>
-                <lvc:CartesianChart Name="Chart" ZoomMode="None">
+            <ScrollViewer Padding="10"/>
+
+
+            <lvc:CartesianChart Name="Chart" ZoomMode="None">
                     
                 </lvc:CartesianChart>
             </Grid>
